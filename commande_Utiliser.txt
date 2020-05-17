@@ -1,0 +1,9 @@
+Pour run le projet
+docker run --name projects.todos --link bdd:db -d -v "$PWD":/app -w /app/server -p 3100:3001 node:13 yarn dev
+
+
+Pour run la bdd
+docker run --name bdd -e MYSQL_ROOT_PASSWORD=1234 -d mysql:5
+
+Pour manager la bdd
+docker run --link bdd:db -p 3101:8080 adminer
